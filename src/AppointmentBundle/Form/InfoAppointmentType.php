@@ -17,7 +17,12 @@ class InfoAppointmentType extends AbstractType
         $builder
             ->add('date')
             ->add('action')
-//            ->add('')
+            ->add('dentist')
+            ->add('insurance')
+            ->add('medication')
+            ->add('other')
+            ->add('vaccines')
+            ->add('xray')
         ;
     }
     
