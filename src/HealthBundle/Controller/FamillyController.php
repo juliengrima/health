@@ -24,7 +24,6 @@ class FamillyController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $famillies = $em->getRepository('HealthBundle:Familly')->findBy(array('id' => $user->getId()));
-        var_dump($user, $famillies);
 
         return $this->render('@Health/familly/index.html.twig', array(
             'famillies' => $famillies,
