@@ -41,6 +41,7 @@ security:
         - { path: ^/setting, role: ROLE_USER }
         - { path: ^/information, role: ROLE_USER }
         - { path: ^/familly, role: ROLE_USER }
+        - { path: ^/appointments, role: ROLE_USER }
         - { path: ^/admin/, role: ROLE_ADMIN }
 
 

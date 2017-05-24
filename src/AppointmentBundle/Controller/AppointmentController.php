@@ -34,7 +34,8 @@ class AppointmentController extends Controller
     public function newAction(Request $request)
     {
         $appointment = new Appointment();
-        $form = $this->createForm('AppointmentBundle\Form\AppointmentType', $appointment);
+        $user = $this->getUser();
+        $form = $this->createForm('AppointmentBundle\Form\InfoAppointmentType', $appointment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
