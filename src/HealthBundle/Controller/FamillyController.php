@@ -20,15 +20,14 @@ class FamillyController extends Controller
      */
     public function indexAction(Request $request)
     {
-//        $user = $this->container->get('security.context')->getToken()->getUser();
+        $user = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
-//        $user = $request->get('{{ app.user.id }}');
-        $famillies = $em->getRepository('HealthBundle:Familly')->findAll();
+        $famillies = $em->getRepository('HealthBundle:Familly')->findBy(array('id' => $user->getId()));
+        var_dump($user, $famillies);
 
         return $this->render('@Health/familly/index.html.twig', array(
             'famillies' => $famillies,
-//            'user' => $user,
         ));
     }
 

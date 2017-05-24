@@ -14,17 +14,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
 class UploadsService extends Controller
 {
-//    protected $container;
-//
-//    public function __construct(Container $container) {
-//        $this->container = $container;
-//    }
-
+    protected $container;
     private $targetDir;
 
-    public function __construct($targetDir)
+    public function __construct($targetDir, Container $container)
     {
         $this->targetDir = $targetDir;
+        $this->container = $container;
     }
 
     public function mediaUploads($familly){
