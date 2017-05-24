@@ -175,4 +175,3 @@ class Information
         return $this->number;
     }
 }
-

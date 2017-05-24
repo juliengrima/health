@@ -18,4 +18,18 @@ AppointmentBundle\Entity\Appointment:
             type: string
             length: 255
 
+    manyToOne:
+            dentist:
+                targetEntity: MedicalBundle\Entity\Dentist
+            insurance:
+                targetEntity: MedicalBundle\Entity\Insurance
+            medication:
+                targetEntity: MedicalBundle\Entity\Medication
+            other:
+                targetEntity: MedicalBundle\Entity\Others
+            vaccines:
+                targetEntity: MedicalBundle\Entity\Vaccines
+            xray:
+                targetEntity: MedicalBundle\Entity\Xrays
+
     lifecycleCallbacks: {  }
