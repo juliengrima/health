@@ -1,0 +1,7 @@
+information_information:
+    resource: "@InformationBundle/Resources/config/routing/information.yml"
+    prefix:   /information
+
+information_homepage:
+    path:     /
+    defaults: { _controller: InformationBundle:Information:index }

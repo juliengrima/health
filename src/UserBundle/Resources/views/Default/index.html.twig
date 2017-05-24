@@ -1,0 +1,63 @@
+{% extends '@User/layout.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('user_index') }}">
+                    <div class="col s4 ">Check all Account</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('dentist_index') }}">
+                    <div class="col s4 ">Check all Dentists</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('insurance_index') }}">
+                    <div class="col s4 ">Check all Inssurances</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('medication_index') }}">
+                    <div class="col s4 ">Check all Medications</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('vaccines_index') }}">
+                    <div class="col s4 ">Check all Vaccines</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 highlight">
+                <a href="{{ path('xrays_index') }}">
+                    <div class="col s4 ">Check all X-ray</div>
+                    <div class="col s4"></div>
+                    <div class="col s4"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

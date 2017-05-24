@@ -1,0 +1,17 @@
+MedicalBundle\Entity\Xrays:
+    type: entity
+    table: null
+    repositoryClass: MedicalBundle\Repository\XraysRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        xrays:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

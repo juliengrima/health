@@ -1,0 +1,24 @@
+xrays_index:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Xrays:index" }
+    methods:  GET
+
+xrays_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Xrays:show" }
+    methods:  GET
+
+xrays_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Xrays:new" }
+    methods:  [GET, POST]
+
+xrays_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Xrays:edit" }
+    methods:  [GET, POST]
+
+xrays_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Xrays:delete" }
+    methods:  DELETE

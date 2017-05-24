@@ -1,0 +1,56 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center">Familly list</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+
+                {% for familly in famillies %}
+
+                    <p>hello : {{ app.user.username }} - {{ app.user.id }}</p>
+
+                    <div class="row indexlink">
+                        <a href="{{ path('familly_show', {'id': familly.id}) }}" class="indexlink">
+                        <div class="col s2"><img src="{{ asset('uploads/pictures/' ~familly.picture) }}" class="circle imgsizeindex"></div>
+                        <div class="col s2 center">{{ familly.name }}</div>
+                        <div class="col s2 center">{{ familly.statut }}</div>
+                        <div class="col s2 center">{{ familly.type }}</div>
+                        <div class="col s2 center">{% if familly.birthdate %}{{ familly.birthdate|date('Y-m-d') }}{% endif %}</div>
+                        </a>
+                        <div class="col s2 center">
+                            {#{{ form_start(delete_form) }}#}
+                            <a href="{{ path('familly_delete', {'id': familly.id})}}">
+                                <button class="user btn-floating btn-large waves-effect tooltipped icon-background4 position" type="submit" name="action"
+                                        data-position="bottom"
+                                        data-delay="50"
+                                        data-tooltip="supprimer">
+                                    <i class="material-icons">lock_outline</i>
+                                </button>
+                            </a>
+                            {#{{ form_end(delete_form) }}#}
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 center">
+                <a href="{{ path('familly_new') }}" class="btn-floating btn-large waves-effect waves-light green darken-1 modal-action modal-close bouton-new ">
+                    <i class=" material-icons">add</i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

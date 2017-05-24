@@ -1,0 +1,44 @@
+HealthBundle\Entity\Familly:
+    type: entity
+    table: null
+    repositoryClass: HealthBundle\Repository\FamillyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        picture:
+            type: string
+            length: 255
+            nullable: true
+        name:
+            type: string
+            length: 255
+        statut:
+            type: string
+            length: 255
+        type:
+            type: string
+            length: 7
+        birthdate:
+            type: string
+            length: 255
+        color:
+            type: string
+            length: 10
+            nullable: true
+
+    manyToOne:
+        user:
+            targetEntity: UserBundle\Entity\User
+            cascade: ['all']
+        information:
+            targetEntity: InformationBundle\Entity\Information
+        appointment:
+            targetEntity: AppointmentBundle\Entity\Appointment
+            cascade: ['all']
+
+    lifecycleCallbacks: {  }

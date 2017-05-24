@@ -1,0 +1,21 @@
+AppointmentBundle\Entity\Appointment:
+    type: entity
+    table: null
+    repositoryClass: AppointmentBundle\Repository\AppointmentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        date:
+            type: string
+            length: 255
+            nullable: true
+        action:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

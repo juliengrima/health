@@ -1,0 +1,8 @@
+health_homepage:
+    path:     /
+    defaults: { _controller: HealthBundle:Default:index }
+
+health_familly:
+    resource: "@HealthBundle/Resources/config/routing/familly.yml"
+    prefix:   /familly
+    methods:  [GET, POST]

@@ -1,0 +1,172 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block back %}
+    <body style="background-color: {{ familly.color }};">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="row center">
+            <div class="col s12">
+                <h1>Member of familly</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s3">
+                <img src="{{ asset('uploads/pictures/' ~familly.picture) }}" class="circle imgsize">
+            </div>
+            <div class="col s3">
+                <div class="row">
+                    <div class="col s6">
+                        <p>{{ familly.name }}</p>
+                    </div>
+                    <div class="col s6">
+                        {% if familly.birthdate %}
+
+                            <p>{{ familly.birthdate|date('Y-m-d') }}</p>
+
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>{{ familly.statut }}</p>
+                    </div>
+                    <div class="col s6">
+                        <p>{{ familly.type }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 center">
+                <p>Informations :</p>
+            </div>
+
+            {% if familly.information == null  %}
+
+            <div class="row">
+                <div class="col s12 center">
+                    <a href="{{ path('familly_edit', {'id': familly.id}) }}"><i class="medium material-icons">note_add</i></a>
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="row">
+                <div class="col s4">
+                    <p>Doctor :</p>
+                    <p>Address :</p>
+                </div>
+                <div class="col s4">
+                    <p>{{ familly.information.doctor }}</p>
+                    <p>{{ familly.information.address }}</p>
+                    <p>{{ familly.information.city }} / {{ familly.information.zipcode }}</p>
+                    <tel>
+                        <a class="3" href="callto:{{ familly.information.number }}">{{ familly.information.number }}</a>
+                    </tel>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col s12 center">
+                <p>Medical :</p>
+            </div>
+
+            {% if familly.appointment == null  %}
+
+                <div class="row">
+                    <div class="col s12 center">
+                        <a href="{{ path('familly_edit', {'id': familly.id}) }}"><i class="medium material-icons">note_add</i></a>
+                    </div>
+                </div>
+
+            {% else %}
+
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+
+
+                    {##}
+                    {#<div class="col s4">#}
+                        {#<p>Doctor :</p>#}
+                        {#<p>Address :</p>#}
+                    {#</div>#}
+                    {#<div class="col s4">#}
+                        {#<p>{{ familly.information.doctor }}</p>#}
+                        {#<p>{{ familly.information.address }}</p>#}
+                        {#<p>{{ familly.information.city }} / {{ familly.information.zipcode }}</p>#}
+                        {#<tel>#}
+                            {#<a class="3" href="callto:{{ familly.information.number }}">{{ familly.information.number }}</a>#}
+                        {#</tel>#}
+                    {#</div>#}
+                </div>
+
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col s4 center">
+                <a class="btn-floating btn-large waves-effect waves-light blue darken-1 modal-action modal-close position"
+                   href="{{ path('familly_index') }}">
+                    <i class="small material-icons">view_list</i>
+                </a>
+            </div>
+            <div class="col s4 center">
+                <a href="{{ path('familly_edit', { 'id': familly.id }) }}">
+                    <button class="user btn-floating btn-large waves-effect tooltipped icon-background4" type="submit" name="action"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Editer">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </a>
+            </div>
+            <div class="col s4 center">
+
+                {{ form_start(delete_form) }}
+
+                <a href="{{ path('familly_delete', {'id': familly.id})}}">
+                    <button class="user btn-floating btn-large waves-effect tooltipped icon-background4 position" type="submit" name="action"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="supprimer">
+                        <i class="material-icons">lock_outline</i>
+                    </button>
+                </a>
+
+                {{ form_end(delete_form) }}
+
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+    </div>
+{% endblock %}

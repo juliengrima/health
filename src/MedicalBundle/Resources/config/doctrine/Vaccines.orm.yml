@@ -1,0 +1,17 @@
+MedicalBundle\Entity\Vaccines:
+    type: entity
+    table: null
+    repositoryClass: MedicalBundle\Repository\VaccinesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        vaccines:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

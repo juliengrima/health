@@ -1,0 +1,17 @@
+MedicalBundle\Entity\Insurance:
+    type: entity
+    table: null
+    repositoryClass: MedicalBundle\Repository\InsuranceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        insurance:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

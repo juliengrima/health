@@ -1,0 +1,64 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center">Clinic informations</h1>
+            </div>
+        </div>
+
+
+    {{ form_start(form) }}
+
+        <div class="row">
+            <div class="col s12">
+                <p>Doctor's name :</p>
+                {{ form_widget(form.doctor, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.doctor) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Clinic's address :</p>
+                {{ form_widget(form.address, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.address) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>City :</p>
+                {{ form_widget(form.city, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.city) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Zipcode :</p>
+                {{ form_widget(form.zipcode, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.zipcode) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Call number :</p>
+                {#{{ form_widget(form.birthdate) }}#}
+                {{ form_widget(form.number, { 'attr': {'class': 'datepicker', 'type' : 'date'} }) }}
+                {{ form_errors(form.number) }}
+            </div>
+        </div>
+
+        <input type="submit" value="Create" />
+
+    {{ form_end(form) }}
+        <div class="space"></div>
+
+    <ul>
+        <li>
+            <a href="{{ path('information_index') }}">Back to the list</a>
+        </li>
+    </ul>
+
+    </div>
+{% endblock %}

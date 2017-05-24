@@ -1,0 +1,7 @@
+appointment_appointment:
+    resource: "@AppointmentBundle/Resources/config/routing/appointment.yml"
+    prefix:   /appointment
+
+appointment_homepage:
+    path:     /
+    defaults: { _controller: AppointmentBundle:Default:index }

@@ -1,0 +1,24 @@
+vaccines_index:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Vaccines:index" }
+    methods:  GET
+
+vaccines_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Vaccines:show" }
+    methods:  GET
+
+vaccines_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Vaccines:new" }
+    methods:  [GET, POST]
+
+vaccines_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Vaccines:edit" }
+    methods:  [GET, POST]
+
+vaccines_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Vaccines:delete" }
+    methods:  DELETE

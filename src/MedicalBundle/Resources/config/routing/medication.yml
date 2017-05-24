@@ -1,0 +1,24 @@
+medication_index:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Medication:index" }
+    methods:  GET
+
+medication_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Medication:show" }
+    methods:  GET
+
+medication_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Medication:new" }
+    methods:  [GET, POST]
+
+medication_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Medication:edit" }
+    methods:  [GET, POST]
+
+medication_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Medication:delete" }
+    methods:  DELETE

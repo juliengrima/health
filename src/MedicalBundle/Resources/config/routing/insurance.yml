@@ -1,0 +1,24 @@
+insurance_index:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Insurance:index" }
+    methods:  GET
+
+insurance_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Insurance:show" }
+    methods:  GET
+
+insurance_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Insurance:new" }
+    methods:  [GET, POST]
+
+insurance_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Insurance:edit" }
+    methods:  [GET, POST]
+
+insurance_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Insurance:delete" }
+    methods:  DELETE

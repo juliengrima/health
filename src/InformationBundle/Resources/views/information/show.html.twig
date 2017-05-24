@@ -1,0 +1,55 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center">Clinic informations</h1>
+            </div>
+        </div>
+
+
+        <table>
+            <tbody>
+
+                </tr>
+                <tr>
+                    <th>Doctor :</th>
+                    <td>{{ information.doctor }}</td>
+                </tr>
+                <tr>
+                    <th>Address :</th>
+                    <td>{{ information.address }}</td>
+                </tr>
+                <tr>
+                    <th>Zipcode :</th>
+                    <td>{{ information.zipcode }}</td>
+                </tr>
+                <tr>
+                    <th>City :</th>
+                    <td>{{ information.city }}</td>
+                </tr>
+                <tr>
+                    <th>Number :</th>
+                    <td>{{ information.number }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('information_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('information_edit', { 'id': information.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

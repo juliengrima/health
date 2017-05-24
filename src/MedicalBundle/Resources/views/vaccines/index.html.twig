@@ -1,0 +1,39 @@
+{% extends '@User/layout.html.twig' %}
+
+{% block body %}
+    <h1>Vaccines list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Vaccines</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vaccine in vaccines %}
+            <tr>
+                <td><a href="{{ path('vaccines_show', { 'id': vaccine.id }) }}">{{ vaccine.id }}</a></td>
+                <td>{{ vaccine.vaccines }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vaccines_show', { 'id': vaccine.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vaccines_edit', { 'id': vaccine.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vaccines_new') }}">Create a new vaccine</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,8 @@
+HealthBundle\Entity\Familly:
+    properties:
+        picture:
+            - File:
+                maxSize: 4096k
+#                mimeTypes: [image/png, image/bmp, image/jpx, [RFC2045][RFC2046], [RFC2045][RFC2046]]
+#                maxSizeMessage: "Too big."
+                mimeTypesMessage: "Please provide a valid image file"

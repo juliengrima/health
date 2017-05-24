@@ -1,0 +1,17 @@
+MedicalBundle\Entity\Others:
+    type: entity
+    table: null
+    repositoryClass: MedicalBundle\Repository\OthersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        others:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

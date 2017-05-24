@@ -1,0 +1,98 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/health/css/colorpicker.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center">Familly member register</h1>
+            </div>
+        </div>
+
+    {{ form_start(form) }}
+
+        <div class="row center">
+            <div class="col s12">
+                {{ form_widget(form.picture) }}
+                {{ form_errors(form.picture) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Name :</p>
+                {{ form_widget(form.name, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Statut :</p>
+                {{ form_widget(form.statut, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.statut) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Type :</p>
+                {{ form_widget(form.type, { 'attr': {'class': 'input-size'} }) }}
+                {{ form_errors(form.type) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>Birthdate :</p>
+                {{ form_widget(form.birthdate, { 'attr': {'class': 'datepicker', 'type' : 'date'} }) }}
+                {{ form_errors(form.birthdate) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>color :</p>
+                {{ form_widget(form.color, { 'id': 'colorpicker' }) }}
+                {{ form_errors(form.color) }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col s6 center">
+                <button class="btn-floating btn-large waves-effect waves-light green darken-1 tooltipped"
+                        type="submit"
+                    data-position="bottom"
+                    data-delay="50"
+                    data-tooltip="Enregistrer">
+                    <i class="material-icons">check</i>
+                </button>
+            </div>
+
+            {{ form_end(form) }}
+
+            <div class="col s6 center">
+                <a href="{{ path('familly_index') }}">
+                    <button class="user btn-floating btn-large waves-effect tooltipped icon-background6 " type="submit" name="action"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Accueil">
+                        <i class="material-icons">view_list</i>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.date.js"></script>
+    <script src="{{ asset('bundles/health/javascripts/materialize-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('bundles/health/javascripts/mainjs.js') }}"></script>
+{% endblock %}

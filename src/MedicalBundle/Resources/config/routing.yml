@@ -1,0 +1,27 @@
+medical_homepage:
+    path:     /
+    defaults: { _controller: MedicalBundle:Default:index }
+
+medical_dentist:
+    resource: "@MedicalBundle/Resources/config/routing/dentist.yml"
+    prefix:   /dentist
+
+medical_insurance:
+        resource: "@MedicalBundle/Resources/config/routing/insurance.yml"
+        prefix:   /insurance
+
+medical_medication:
+        resource: "@MedicalBundle/Resources/config/routing/medication.yml"
+        prefix:   /medication
+
+medical_vaccines:
+        resource: "@MedicalBundle/Resources/config/routing/vaccines.yml"
+        prefix:   /vaccines
+
+medical_others:
+        resource: "@MedicalBundle/Resources/config/routing/others.yml"
+        prefix:   /others
+
+medical_xrays:
+        resource: "@MedicalBundle/Resources/config/routing/xrays.yml"
+        prefix:   /xrays

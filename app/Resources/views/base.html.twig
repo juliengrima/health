@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Health{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/health/pictures/health.svg') }}" />
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        <!-- Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Overloads-->
+        <link rel="stylesheet" href="{{ asset('bundles/health/css/stylesheets.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+
+    {% block back %}
+        <body class="background">
+    {% endblock %}
+
+    {% block header %}{% endblock %}
+
+    {% if is_granted('ROLE_USER') %}
+        {% block body %}{% endblock %}  <!-- HERE WE HAVE USERS VIEWS -->
+        {% block footer%}{% endblock %}
+    {% else %}
+        <!-- HERE WE HAVE CONNEXION -->
+
+    {% block login %}
+        <div class="container">
+            <div class="row">
+
+                <div class="valign-wrapper">
+                    <div class=".center-align">
+                        <a class="waves-effect waves-light btn logbtn" href="{{ path('fos_user_security_login') }}">
+                            <div class="valign-wrapper">
+                                <div class=".center-align">
+                                    <p class="loginp">LOGIN</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="valign-wrapper">
+                    <div class=".center-align">
+                        <a class="waves-effect waves-light red darken-4 btn regbtn" href="{{ path('fos_user_registration_register') }}">
+                            <div class="valign-wrapper">
+                                <div class=".center-align">
+                                    <p class="regp">REGISTER</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endblock %}
+
+    {% endif %}
+
+
+    {% block javascripts %}
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script src="{{ asset('bundles/user/javascripts/mainjs.js') }}"></script>
+
+    {% endblock %}
+
+    </body>
+</html>

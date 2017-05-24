@@ -1,0 +1,17 @@
+MedicalBundle\Entity\Dentist:
+    type: entity
+    table: null
+    repositoryClass: MedicalBundle\Repository\DentistRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        dentist:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

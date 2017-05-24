@@ -1,0 +1,22 @@
+UserBundle\Entity\User:
+    type: entity
+    table: fos_user
+    repositoryClass: UserBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        familly:
+            type: string
+            length: 255
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Others list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Others</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for other in others %}
+            <tr>
+                <td><a href="{{ path('others_show', { 'id': other.id }) }}">{{ other.id }}</a></td>
+                <td>{{ other.others }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('others_show', { 'id': other.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('others_edit', { 'id': other.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('others_new') }}">Create a new other</a>
+        </li>
+    </ul>
+{% endblock %}

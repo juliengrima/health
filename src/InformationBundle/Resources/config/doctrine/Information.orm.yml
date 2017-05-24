@@ -1,0 +1,34 @@
+InformationBundle\Entity\Information:
+    type: entity
+    table: null
+    repositoryClass: InformationBundle\Repository\InformationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        doctor:
+            type: string
+            length: 255
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        zipcode:
+            type: string
+            length: 10
+            nullable: true
+        city:
+            type: string
+            length: 255
+            nullable: true
+        number:
+            type: string
+            length: 255
+            nullable: true
+
+    lifecycleCallbacks: {  }

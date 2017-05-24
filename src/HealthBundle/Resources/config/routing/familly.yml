@@ -1,0 +1,24 @@
+familly_index:
+    path:     /
+    defaults: { _controller: "HealthBundle:Familly:index" }
+    methods:  GET
+
+familly_show:
+    path:     /{id}/show
+    defaults: { _controller: "HealthBundle:Familly:show" }
+    methods:  GET
+
+familly_new:
+    path:     /new
+    defaults: { _controller: "HealthBundle:Familly:new" }
+    methods:  [GET, POST]
+
+familly_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HealthBundle:Familly:edit" }
+    methods:  [GET, POST]
+
+familly_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HealthBundle:Familly:delete" }
+    methods:  [GET, POST]

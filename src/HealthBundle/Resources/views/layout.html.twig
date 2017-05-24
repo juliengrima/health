@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block footer %}
+
+    <footer class="page-footer position">
+        <div class="container">
+            <div class="row">
+                <div class="col s4 center">
+                    <a href="{{ path('health_homepage') }}"><i class="large material-icons">alarm_on</i></a>
+                </div>
+                <div class="col s4 center">
+                    <a href="{{ path('familly_index') }}"><i class="large material-icons">supervisor_account</i></a>
+                </div>
+                <div class="col s4 center">
+                    <a href="{{ path('setting_homepage') }}"><i class="large material-icons">settings</i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

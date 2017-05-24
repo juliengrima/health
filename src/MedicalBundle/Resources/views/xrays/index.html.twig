@@ -1,0 +1,39 @@
+{% extends '@User/layout.html.twig' %}
+
+{% block body %}
+    <h1>Xrays list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Xrays</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for xray in xrays %}
+            <tr>
+                <td><a href="{{ path('xrays_show', { 'id': xray.id }) }}">{{ xray.id }}</a></td>
+                <td>{{ xray.xrays }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('xrays_show', { 'id': xray.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('xrays_edit', { 'id': xray.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('xrays_new') }}">Create a new xray</a>
+        </li>
+    </ul>
+{% endblock %}

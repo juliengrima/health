@@ -1,0 +1,122 @@
+{% extends '@Health/layout.html.twig' %}
+
+{% block back %}
+    <body style="background-color: {{ familly.color }};">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center">Familly member editor</h1>
+            </div>
+        </div>
+
+        {{ form_start(edit_form) }}
+
+            <div class="row">
+                <div class="col s6">
+                    <img src="{{ asset('uploads/pictures/' ~familly.picture) }}" class="circle imgsize">
+                </div>
+                <div class="col s6">
+                    {{ form_widget(edit_form.picture) }}
+                    {{ form_errors(edit_form.picture) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <p>Name :</p>
+                    {{ form_widget(edit_form.name, { 'attr': {'class': 'input-size'} }) }}
+                    {{ form_errors(edit_form.name) }}
+                </div>
+                <div class="col s6">
+                    <p>Statut :</p>
+                    {{ form_widget(edit_form.statut, { 'attr': {'class': 'input-size'} }) }}
+                    {{ form_errors(edit_form.statut) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <p>Type :</p>
+                    {{ form_widget(edit_form.type, { 'attr': {'class': 'input-size'} }) }}
+                    {{ form_errors(edit_form.type) }}
+                </div>
+                <div class="col s6">
+                    <p>Birthdate :</p>
+                    {{ form_widget(edit_form.birthdate, { 'attr': {'class': 'datepicker', 'type' : 'date'} }) }}
+                    {{ form_errors(edit_form.birthdate) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p>color : {{ familly.color }}</p>
+                    {{ form_widget(edit_form.color, { 'id': 'colorpicker' }) }}
+                    {{ form_errors(edit_form.color) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s6">
+                    <p>Clinic / Doctor :</p>
+                    {{ form_widget(edit_form.information) }}
+                    {{ form_errors(edit_form.information) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s4 center">
+                    <button class="btn-floating btn-large waves-effect waves-light green darken-1 tooltipped  "
+                            type="submit"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Enregistrer">
+                        <i class="material-icons">check</i>
+                    </button>
+                </div>
+
+            {{ form_end(edit_form) }}
+
+            <div class="col s4 center">
+
+                {{ form_start(delete_form) }}
+
+                <a href="{{ path('familly_delete', {'id': familly.id})}}">
+                    <button class="user btn-floating btn-large waves-effect tooltipped icon-background4 position"
+                            type="submit"
+                            name="action"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="supprimer">
+                        <i class="material-icons">lock_outline</i>
+                    </button>
+                </a>
+
+                {{ form_end(delete_form) }}
+
+            </div>
+            <div class="col s4 center">
+                <a href="{{ path('familly_show', {'id': familly.id}) }}">
+                    <button class="user btn-floating btn-large waves-effect tooltipped icon-background6 position" type="submit" name="action"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Annuler">
+                        <i class="material-icons">home</i>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.date.js"></script>
+    <script src="{{ asset('bundles/health/javascripts/materialize-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('bundles/health/javascripts/mainjs.js') }}"></script>
+{% endblock %}

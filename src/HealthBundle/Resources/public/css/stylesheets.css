@@ -1,0 +1,239 @@
+/***************************************************/
+/***************************************************/
+/******************** GENERALITY *******************/
+/***************************************************/
+/***************************************************/
+
+h1{
+    color: white;
+}
+
+p{
+    color: ghostwhite;
+}
+
+label{
+    color: white;
+}
+
+.background{
+    background-color: rgb(18,143,60);
+    color: white;
+}
+
+/***************************************************/
+/***************************************************/
+/******************* LAYOUT ************************/
+/***************************************************/
+/***************************************************/
+
+footer{
+    position:fixed;
+    bottom:0px;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(11, 95, 0, 1) !important;
+
+}
+
+.space{
+    margin-bottom: 30%;
+}
+
+.position{
+    z-index: 10;
+}
+
+/***************************************************/
+/***************************************************/
+/****************** SECURITY ***********************/
+/***************************************************/
+/***************************************************/
+
+.logbtn {
+    display: block;
+    margin-top: 40%;
+    margin-left: 35%;
+    margin-right: 40%;
+    width: 200px;
+    height: 150px;
+}
+
+.startbtn {
+    display: block;
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 40%;
+    width: 200px;
+    height: 150px;
+}
+
+.regbtn {
+    display: block;
+    margin-top: 10%;
+    margin-left: 35%;
+    margin-right: 40%;
+    width: 200px;
+    height: 150px;
+}
+.loginp{
+     display: block;
+     margin-top: 40%;
+     margin-left: 15%;
+     margin-right: 40%;
+     font-size: 2.5em;
+ }
+
+.regp{
+    display: block;
+    margin-top: 40%;
+    margin-left: -5%;
+    margin-right: 40%;
+    font-size: 2.5em;
+}
+
+.homebtn{
+    height: 50px;
+}
+
+
+/***************************************************/
+/***************************************************/
+/************ HEALTH APPOINTMENT PAGE **************/
+/***************************************************/
+/***************************************************/
+
+.bloc {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 20px #555;
+    -webkit-box-shadow: 0 0 20px #555;
+    box-shadow: 0 0 20px #555;
+    width:600px;
+    margin: auto;
+}
+
+.bloc .head {
+    margin:0;
+    padding:5px;
+    font-size:1.5em;
+    color:#fff;
+    background-color:#9DADC6;
+    border:1px solid #8E98A4;
+    border-bottom:0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.thismonth {
+    background-color:#e5e5e5;
+    margin: auto;
+}
+
+.bloc .body{
+    background-color:#e5e5e5;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin:0;
+    border:1px solid #fff;
+    border-top: 0;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+/***************************************************/
+/***************************************************/
+/****************** FAMILLY PAGES ******************/
+/***************************************************/
+/***************************************************/
+
+/*************** FAMILLY INDEX ***************/
+
+.indexlink{
+    color: ghostwhite;
+    background-color: transparent;
+}
+.indexlink:hover{
+    color: ghostwhite;
+    background-color: rgba(11, 95, 0, 0.3);
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+
+}
+
+/**************** FAMILLY NEW ****************/
+
+.input-size{
+    width: 50% !important;
+}
+
+#colorpicker{
+    width: 50%;
+}
+
+.datepicker{
+    width: 50% !important;
+}
+
+/*************** FAMILLY EDIT ****************/
+
+/*************** FAMILLY SHOW ****************/
+
+.imgsize{
+    width: 150px;
+    height: 150px;
+}
+.imgsizeindex{
+    width: 100px;
+    height: 100px;
+}
+
+.showpicture, .roundedImageShadow, .roundedImageBorder{
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius: 50%;
+    border-radius:50px;
+    width:90px;
+    height:90px;
+}
+.roundedImageShadow{
+    -moz-box-shadow: 0px 0px 10px #343434;
+    -webkit-box-shadow: 0px 0px 10px #343434;
+    -o-box-shadow: 0px 0px 10px #343434;
+    box-shadow: 0px 0px 10px #343434;
+}
+.roundedImageBorder{
+    border: 1px solid #006699;
+}
+
+/***************************************************/
+/***************************************************/
+/***************** PARAMETER PAGES *****************/
+/***************************************************/
+/***************************************************/
+
+.parameter_link{
+    background-color: rgba(11, 97, 41, 0.3);
+    border-radius: 50px;
+
+}
+
+.parameter_link:hover{
+    background-color: rgba(11, 97, 41, 0.9);
+}
+
+textarea{
+    resize:none;
+    background-color: ghostwhite;
+    width: 300px;
+    height: 400px;
+    text-align: left;
+}
+
+.include_div{
+    width: 150px;
+    height: 150px;
+}

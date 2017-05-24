@@ -1,0 +1,48 @@
+health:
+    resource: "@HealthBundle/Resources/config/routing.yml"
+    prefix:   /
+
+information:
+    resource: "@InformationBundle/Resources/config/routing.yml"
+    prefix:   /informations
+
+medical:
+    resource: "@MedicalBundle/Resources/config/routing.yml"
+    prefix:   /medicals
+
+appointment:
+    resource: "@AppointmentBundle/Resources/config/routing.yml"
+    prefix:   /appointments
+
+setting:
+    resource: "@SettingBundle/Resources/config/routing.yml"
+    prefix:   /setting
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /users
+
+###################################################################
+#                                                                 #
+#                             FOS USER                            #
+#                                                                 #
+###################################################################
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
